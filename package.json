@@ -1,0 +1,27 @@
+{
+  "name": "muhammadjalil8481/gamevault-shared",
+  "version": "1.0.0",
+  "description": "Github package for gamevault",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm",
+    "build:types": "tsc --emitDeclarationOnly",
+    "prepare": "npm run build && npm run build:types"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/muhammadjalil8481/gamevault-shared.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "devDependencies": {
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.3"
+  },
+  "files": [
+    "dist"
+  ]
+}

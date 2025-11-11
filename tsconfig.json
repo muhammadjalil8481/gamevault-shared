@@ -1,0 +1,46 @@
+{
+  "compilerOptions": {
+    /* ✅ Type generation */
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "declarationDir": "./dist/types",
+
+    /* ✅ Target modern JS but keep broad compatibility */
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "node",
+
+    /* ✅ Source structure */
+    "rootDir": "./src",
+    "outDir": "./dist",
+
+    /* ✅ Strictness and quality checks */
+    "strict": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "forceConsistentCasingInFileNames": true,
+
+    /* ✅ Interop and helpers */
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "importHelpers": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+
+    /* ✅ React / JSX support (if your package includes React components) */
+    "jsx": "react-jsx",
+    "lib": ["dom", "esnext"],
+
+    /* ✅ Decorators (only if you actually use them) */
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+
+    /* ✅ Dev-friendly output */
+    "pretty": true,
+    "sourceMap": true,
+    "noEmitOnError": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}
