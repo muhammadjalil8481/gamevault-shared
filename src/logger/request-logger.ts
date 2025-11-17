@@ -30,4 +30,4 @@ const WinstonRequestLogger = (logger: Logger) => {
   });
 };
 
-export default WinstonRequestLogger;
+export { WinstonRequestLogger };

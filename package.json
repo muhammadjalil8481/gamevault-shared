@@ -1,23 +1,35 @@
 {
-  "name": "@muhammadjalil8481/gamevault_shared",
-  "version": "1.0.1",
+  "name": "@muhammadjalil8481/gamevault-shared",
+  "version": "1.0.2",
   "description": "Github package for gamevault",
-  "main": "dist/index.cjs",
+  "main": "dist/index.js",
   "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
+  "types": "dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/types/index.d.ts"
+    }
+  },
   "scripts": {
+    "clean": "rimraf dist",
     "build": "tsup src/index.ts --format cjs,esm",
     "build:types": "tsc --emitDeclarationOnly",
-    "prepare": "npm run build && npm run build:types"
+    "prepare": "npm run clean &&npm run build && npm run build:types",
+    "version:patch": "npm version patch && npm publish"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/muhammadjalil8481/gamevault_shared.git"
+    "url": "https://github.com/muhammadjalil8481/gamevault-shared.git"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
   "devDependencies": {
+    "@types/express": "^5.0.5",
+    "@types/http-errors": "^2.0.5",
+    "rimraf": "^6.1.0",
     "tsup": "^8.5.0",
     "typescript": "^5.9.3"
   },
@@ -25,7 +37,9 @@
     "dist"
   ],
   "dependencies": {
+    "express": "^5.1.0",
     "express-winston": "^4.2.0",
+    "http-errors": "^2.0.0",
     "winston": "^3.18.3"
   }
 }
