@@ -37,6 +37,7 @@
     "dist"
   ],
   "dependencies": {
+    "dotenv": "^17.2.3",
     "express": "^5.1.0",
     "express-winston": "^4.2.0",
     "http-errors": "^2.0.0",
