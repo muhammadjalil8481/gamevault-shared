@@ -29,6 +29,7 @@
   "devDependencies": {
     "@types/express": "^5.0.5",
     "@types/http-errors": "^2.0.5",
+    "@types/jsonwebtoken": "^9.0.10",
     "rimraf": "^6.1.0",
     "tsup": "^8.5.0",
     "typescript": "^5.9.3"
@@ -41,6 +42,7 @@
     "express": "^5.1.0",
     "express-winston": "^4.2.0",
     "http-errors": "^2.0.0",
+    "jsonwebtoken": "^9.0.2",
     "winston": "^3.18.3"
   }
 }
