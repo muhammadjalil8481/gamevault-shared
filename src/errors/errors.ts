@@ -44,3 +44,8 @@ export const InternalServerException = createException(
   StatusCodes.INTERNAL_SERVER_ERROR,
   "Internal Server Error"
 );
+
+export const BadGatewayException = createException(
+  StatusCodes.BAD_GATEWAY,
+  "Bad Gateway"
+);
