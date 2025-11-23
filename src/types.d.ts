@@ -5,5 +5,6 @@ import { JwtPayload } from "jsonwebtoken";
 declare module "express-serve-static-core" {
   interface Request {
     currentUser?: string | JwtPayload
+    requestId?:string
   }
 }

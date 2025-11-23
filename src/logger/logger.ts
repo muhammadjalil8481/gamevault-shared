@@ -78,6 +78,7 @@ const consoleFormat = (shouldColorize = false) => {
       stack,
       service,
       pid,
+      reqId,
       type,
       comingFrom,
       meta,
@@ -85,6 +86,7 @@ const consoleFormat = (shouldColorize = false) => {
     }) => {
       stack = stack || (error as Error)?.stack || "";
       type = (meta as { type: string })?.type || type;
+      reqId = (meta as { reqId: string })?.reqId || reqId;
       let source = (meta as { source: string })?.source;
       const customLevel = getCustomLevel(
         level,
@@ -103,7 +105,9 @@ const consoleFormat = (shouldColorize = false) => {
         shouldColorize,
         source
       );
-      const bodyText = `[${service}] [PID:${pid}]: ${message}`;
+      const bodyText = `[${service}] [PID:${pid}] ${
+        reqId ? `[REQ_ID:${reqId}]` : ""
+      }\n${message}`;
       const fullBody = stack ? `${bodyText}\n${stack}` : bodyText;
       comingFrom = comingFrom
         ? `\n${indent(`COMING FROM : ${comingFrom}`)}`

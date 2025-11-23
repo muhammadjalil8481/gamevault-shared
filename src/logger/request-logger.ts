@@ -21,10 +21,11 @@ const WinstonRequestLogger = (logger: Logger) => {
         : "";
       return `${req.method} ${res.statusCode} ${req.path}${query}${body}`;
     },
-    dynamicMeta: (_req, _res) => {
+    dynamicMeta: (req, _res) => {
       return {
         type: "operational",
         source: "express-winston",
+        reqId: req.requestId,
       };
     },
   });

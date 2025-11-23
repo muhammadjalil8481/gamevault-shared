@@ -1,6 +1,6 @@
 {
   "name": "@muhammadjalil8481/gamevault-shared",
-  "version": "1.1.5",
+  "version": "1.1.10",
   "description": "Github package for gamevault",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -44,6 +44,7 @@
     "http-errors": "^2.0.0",
     "http-status-codes": "^2.3.0",
     "jsonwebtoken": "^9.0.2",
+    "uuid": "^13.0.0",
     "winston": "^3.18.3",
     "winston-daily-rotate-file": "^5.0.0"
   }
