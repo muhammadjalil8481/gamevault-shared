@@ -81,7 +81,9 @@ const consoleFormat = (shouldColorize = false) => {
       type,
       comingFrom,
       meta,
+      error,
     }) => {
+      stack = stack || (error as Error)?.stack || "";
       type = (meta as { type: string })?.type || type;
       let source = (meta as { source: string })?.source;
       const customLevel = getCustomLevel(
