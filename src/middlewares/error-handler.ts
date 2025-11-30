@@ -3,7 +3,7 @@ import { isHttpError } from "http-errors";
 import { Logger } from "winston";
 
 const GlobalErrorHandler = (logger: Logger) => {
-  return (err: any, _req: Request, res: Response, _next: NextFunction) => {
+  return (err: any, req: Request, res: Response, _next: NextFunction) => {
     try {
       const statusCode = isHttpError(err) ? err.status : 500;
       const message = isHttpError(err) ? err.message : "Something went wrong";
@@ -12,7 +12,11 @@ const GlobalErrorHandler = (logger: Logger) => {
       const type = isOperational ? "Operational" : "Error";
 
       if (!isOperational) {
-        logger.error(err);
+        logger.error(err, {
+          comingFrom: 'Global Error Handler',
+          reqId: req.requestId,
+          error: err
+      });
       }
 
       res.status(statusCode).json({

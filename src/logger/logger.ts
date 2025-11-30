@@ -108,7 +108,8 @@ const consoleFormat = (shouldColorize = false) => {
       const bodyText = `[${service}] [PID:${pid}] ${
         reqId ? `[REQ_ID:${reqId}]` : ""
       }\n${message}`;
-      const fullBody = stack ? `${bodyText}\n${stack}` : bodyText;
+      const stackBody = stack ? `${bodyText}\n[STACK] : ${stack}` : bodyText;
+      const fullBody = error ? `${stackBody}\n[ERROR] : ${JSON.stringify(error)}` : stackBody;
       comingFrom = comingFrom
         ? `\n${indent(`COMING FROM : ${comingFrom}`)}`
         : "";

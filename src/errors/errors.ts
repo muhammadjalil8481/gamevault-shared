@@ -4,6 +4,7 @@ import { StatusCodes, getReasonPhrase } from "http-status-codes";
 export interface ErrorParams {
   msg?: string;
   comingFrom?: string;
+  reqId?: string
 }
 
 export function createException(statusCode: number, defaultMsg?: string) {
@@ -11,6 +12,7 @@ export function createException(statusCode: number, defaultMsg?: string) {
     createError(statusCode, params?.msg || defaultMsg || getReasonPhrase(statusCode), {
       comingFrom: params?.comingFrom,
       type: "operational",
+      reqId: params?.reqId
     });
 }
 
