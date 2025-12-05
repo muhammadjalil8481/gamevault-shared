@@ -18,7 +18,7 @@ export interface PermissionDocument {
 export interface RolePermissionDocument {
   id: number;
   role_id: number;
-  role?: RoleDocument;
+  role: RoleDocument;
   permission_id: number;
   permission: PermissionDocument;
   access: boolean;
