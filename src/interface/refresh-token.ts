@@ -5,7 +5,7 @@ export interface RefreshTokenRecord {
   user: UserDocument;
   token: string;
   expires_at: Date;
-  fingerprint?: string;
+  fingerprint: string | null;
   user_agent?: string;
   is_revoked: boolean;
   revoked_reason?: string;
