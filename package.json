@@ -1,6 +1,6 @@
 {
   "name": "@muhammadjalil8481/gamevault-shared",
-  "version": "1.1.24",
+  "version": "1.1.25",
   "description": "Github package for gamevault",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

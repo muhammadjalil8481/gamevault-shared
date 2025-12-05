@@ -29,6 +29,6 @@ export interface UserProfileDocument {
   profile_picture?: string;
   city?: string;
   country?: string;
-  created_at: number;
-  updated_at: number;
+  created_at: Date;
+  updated_at: Date
 }
