@@ -1,6 +1,6 @@
 import { UserDocument } from "./user";
 
-export interface RefreshToken {
+export interface RefreshTokenRecord {
   id: number;
   user: UserDocument;
   token: string;
