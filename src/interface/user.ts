@@ -1,3 +1,5 @@
+import { RoleDocument } from "./roles-permissions";
+
 export interface UserDocument {
   id: number;
   name: string;
@@ -5,6 +7,7 @@ export interface UserDocument {
   username: string;
   phone_number: string;
   password: string;
+  roles: RoleDocument[]
   is_verified: boolean;
   verification_otp?: string;
   verification_otp_sent_at?: Date;
