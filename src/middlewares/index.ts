@@ -3,3 +3,4 @@ export * from "./request-query-write";
 export * from "./remove-coming-from";
 export * from "./verify-gateway-token";
 export * from "./requestId";
+export * from "./check-auth";
